@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .fact {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .fact:last-child {
+            border-bottom: none;
+        }
+        .fact-title {
+            font-weight: bold;
+            color: #555;
+        }
+        .fact-description {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Facts About Wars</h1>
+        <div id="facts"></div>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "World War I",
+                "description": "Also known as the Great War, it lasted from 1914 to 1918 and involved many of the world's great powers."
+            },
+            {
+                "fact": "World War II",
+                "description": "Fought from 1939 to 1945, it was the most widespread and deadliest conflict in human history."
+            },
+            {
+                "fact": "Cold War",
+                "description": "A period of geopolitical tension between the Soviet Union and the United States and their respective allies after World War II."
+            },
+            {
+                "fact": "Vietnam War",
+                "description": "A conflict in Vietnam, Laos, and Cambodia from 1955 to 1975, involving the communist government of North Vietnam against South Vietnam and its principal ally, the United States."
+            },
+            {
+                "fact": "Korean War",
+                "description": "Fought between North Korea and South Korea from 1950 to 1953, with the United Nations, led by the United States, supporting South Korea."
+            },
+            {
+                "fact": "American Civil War",
+                "description": "Fought from 1861 to 1865, it was a civil war in the United States between the North (Union) and the South (Confederacy)."
+            },
+            {
+                "fact": "Napoleonic Wars",
+                "description": "A series of major conflicts from 1803 to 1815, pitting the French Empire and its allies, led by Napoleon I, against a fluctuating array of European powers."
+            },
+            {
+                "fact": "Gulf War",
+                "description": "A conflict in 1990-1991, triggered by Iraq's invasion of Kuwait, leading to military intervention by a coalition led by the United States."
+            },
+            {
+                "fact": "War of 1812",
+                "description": "A conflict fought between the United States and the United Kingdom from 1812 to 1815, partly over restrictions on American trade."
+            },
+            {
+                "fact": "Spanish Civil War",
+                "description": "A civil war in Spain from 1936 to 1939, fought between the Republicans and the Nationalists, led by Francisco Franco."
+            }
+        ];
+
+        const factsContainer = document.getElementById('facts');
+
+        facts.forEach(fact => {
+            const factElement = document.createElement('div');
+            factElement.classList.add('fact');
+            factElement.innerHTML = `
+                <div class="fact-title">${fact.fact}</div>
+                <div class="fact-description">${fact.description}</div>
+            `;
+            factsContainer.appendChild(factElement);
+        });
+    </script>
+</body>
+</html>
